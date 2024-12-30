@@ -7,6 +7,7 @@ A course project from the <a href="https://v2.scrimba.com/learn-react-c0e">React
   <li>Provide at least 4 ingredients to the chef.</li>
   <li>Click the 'Get a Recipe' Button</li>
   <li>Wait for the AI to generate your recipe</li>
+  <i>Note: The AI may take a couple of seconds to generate your recipe.</i>
 </ol>
 
 

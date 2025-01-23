@@ -1,13 +1,16 @@
 import React from "react"
 import IngredientsList from "./IngredientsList"
 import ClaudeRecipe from "./ClaudeRecipe"
+import SkeletonLoading from "./SkeletonLoading"
 import { getRecipeFromMistral } from "../mistral_ai"
 
 function MainBody() {
     const [ingredients, setIngredients]=React.useState([])
     const [recipe, setRecipe] = React.useState("")
+    const [isLoading, setIsLoading] = React.useState(false)
 
     async function generateRecipe() {
+        setIsLoading(true)
         const recipeMarkdown = await getRecipeFromMistral(ingredients)
         setRecipe(recipeMarkdown)
     }
@@ -32,8 +35,10 @@ function MainBody() {
                 />
                 <button className="bg-black text-gray-200 rounded-md px-12 py-2.5 ml-1.5 font-medium text-sm">+ Add ingredient</button>
             </form>
+            
             {ingredients.length > 0 && <IngredientsList toggle={generateRecipe} ingArray={ingredients}/>}
             {recipe && <ClaudeRecipe recipe={recipe}/>}
+            {isLoading && !recipe ? <SkeletonLoading /> : ""} 
         </main>
     )
 }

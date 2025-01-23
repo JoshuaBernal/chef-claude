@@ -5,7 +5,7 @@ import SkeletonLoading from "./SkeletonLoading"
 import { getRecipeFromMistral } from "../mistral_ai"
 
 function MainBody() {
-    const [ingredients, setIngredients]=React.useState([])
+    const [ingredients, setIngredients] = React.useState([])
     const [recipe, setRecipe] = React.useState("")
     const [isLoading, setIsLoading] = React.useState(false)
 
@@ -16,11 +16,14 @@ function MainBody() {
     }
    
     function addIngredient(formData) {
-        setIngredients(
-            prevIngredients => [...prevIngredients, newIngredient]
-        )
-
         const newIngredient = formData.get("ingredient")
+        if (newIngredient) {
+            setIngredients(
+                prevIngredients => [...prevIngredients, newIngredient]
+            )
+        } else {
+            alert("Please enter a valid ingredient")
+        }
     }
 
     return (

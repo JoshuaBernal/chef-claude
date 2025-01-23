@@ -30,3 +30,27 @@ body {
   margin-left: 2rem;
   list-style-type: decimal;
 }
+
+.shake {
+    animation: shake 0.25s;
+    animation-iteration-count: 1;
+}
+
+@keyframes shake {
+    0% { transform: translate(0px, 0px)}
+
+    20% { transform: translate(20px, 0px)}
+
+    40% { transform: translate(-20px, 0px)}
+
+    60% { transform: translate(10px, 0px)}
+
+    80% { transform: translate(-5px, 0px)}
+
+    100% { transform: translate(0px, 0px)}
+}
+
+.error {
+    background-color: #e54646;
+    color: white;
+}

@@ -1,4 +1,4 @@
-# Chef Claude AI Project
+# Chef Mistral AI Project
 
 A course project from the <a href="https://v2.scrimba.com/learn-react-c0e">React course</a> in <a href="https://scrimba.com">Scrimba</a>
 
